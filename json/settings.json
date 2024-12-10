@@ -1,0 +1,28 @@
+{
+    "title": "Astral Candle",
+    "favicon": "/content\\siteimages\\favicon.ico?",
+    "sitedob": "2024",
+    "words": "Casual . Cozy . Cookies",
+    "socials":[
+        {
+            "name": "Youtube",
+            "icon": "youtube.PNG?",
+            "url": "/"
+        },
+        {
+            "name": "Instagram",
+            "icon": "instagram.PNG?",
+            "url": "instagram.com"
+        },
+        {
+            "name": "Discord",
+            "icon": "discord.PNG?",
+            "url": "/"
+        },
+        {
+            "name": "LinkedIn",
+            "icon": "linkedIn.PNG?",
+            "url": "/"
+        }
+    ]
+}
