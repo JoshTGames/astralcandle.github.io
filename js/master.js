@@ -5,6 +5,18 @@ Promise.all(jsonURLs.map(url => fetch(url).then(response => response.json())))
 .catch(error => console.error('Error:', error));
 // --
 
+function generateSocials(socialData){
+    let socials = ``;
+    for(let i = 0; i < socialData.length; i++){
+        socials += `
+            <a href="https://${socialData[i].url}" target="_blank" rel="noopener noreferrer">
+                <img src="/content\\siteimages\\socials\\${socialData[i].icon}" alt="${socialData[i].name}" class="button">
+            </a>
+        `;
+    }
+    return socials
+}
+
 function generateMain(data){
     // Generate Info
     let settings = data[0];
@@ -44,19 +56,14 @@ function generateMain(data){
     }
 
     // socials
-    let socials = `<span id="socials">`;
-    for(let i = 0; i < data[0].socials.length; i++){
-        socials += `
-            <a href="${data[0].socials[i].url}" target="_blank" rel="noopener noreferrer">
-                <img src="/content\\siteimages\\socials\\${data[0].socials[i].icon}" alt="${data[0].socials[i].name}" class="button">
-            </a>
-        `;
-    }
-    socials += `</span>`
+    element = document.getElementById("socials");
+    let socials = generateSocials(data[0].socials);
+    if(element != null){ element.innerHTML = socials; }
+
     element = document.querySelector(".wrapper");
     element.innerHTML += `
         <div class="footer">
-            ${socials}
+            <span id="socials">${socials}</span>
             <span class="footermsg">©${settings.sitedob}-${new Date().getFullYear()}. Astral Candle. All Rights Reserved</span>
         </div>
     `;
