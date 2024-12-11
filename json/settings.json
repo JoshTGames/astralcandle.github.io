@@ -6,17 +6,17 @@
     "socials":[
         {
             "name": "Youtube",
-            "icon": "youtube.PNG?",
+            "icon": "youtube.png?",
             "url": "/"
         },
         {
             "name": "Instagram",
-            "icon": "instagram.PNG?",
+            "icon": "instagram.png?",
             "url": "instagram.com/astralcandlestudios/"
         },
         {
             "name": "Discord",
-            "icon": "discord.PNG?",
+            "icon": "discord.png?",
             "url": "discord.gg/eVS47xzaGV"
         }
     ]
