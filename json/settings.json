@@ -18,11 +18,6 @@
             "name": "Discord",
             "icon": "discord.PNG?",
             "url": "discord.gg/eVS47xzaGV"
-        },
-        {
-            "name": "LinkedIn",
-            "icon": "linkedIn.PNG?",
-            "url": "/"
         }
     ]
 }
