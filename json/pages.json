@@ -1,0 +1,27 @@
+[
+    {
+        "name": "GAMES",
+        "icon": "youtube.PNG?",
+        "url": "games"
+    },
+    {
+        "name": "BLOG",
+        "icon": "youtube.PNG?",
+        "url": "blog"
+    },
+    {
+        "name": "OUR STORY",
+        "icon": "youtube.PNG?",
+        "url": "about"
+    },
+    {
+        "name": "PRESS KIT",
+        "icon": "youtube.PNG?",
+        "url": "presskit"
+    },
+    {
+        "name": "CONTACT",
+        "icon": "youtube.PNG?",
+        "url": "contact"
+    }
+]

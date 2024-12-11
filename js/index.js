@@ -10,11 +10,11 @@ function generateIndex(data){
     element.innerHTML += `
         ${data[0].words}              
     `;
-
+    // socials
     element = document.getElementById("socials");
     for(let i = 0; i < data[0].socials.length; i++){
         element.innerHTML+= `
-            <a href="https://www.${data[0].socials[i].url}">
+            <a href="https://www.${data[0].socials[i].url}" target="_blank" rel="noopener noreferrer">
                 <img src="/content\\siteimages\\socials\\${data[0].socials[i].icon}" alt="${data[0].socials[i].name}" class="button">
             </a>
         `;

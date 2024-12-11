@@ -1,0 +1,102 @@
+.wrapper{    
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    perspective: 10px;
+}
+
+.wrapper::-webkit-scrollbar{ width: 0.5rem; }
+.wrapper::-webkit-scrollbar-track{ background: #0e0c10; }
+.wrapper::-webkit-scrollbar-thumb{ background: #683d8e; }
+
+.star1{ transform: translateZ(-10px) scale(2); }
+.constellations{ 
+    transform: translateZ(-10px) scale(2); 
+    animation: fade 5s ease-in-out both;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+.star2{ transform: translateZ(-5px) scale(1.5); }
+.star3{ transform: translateZ(-2.5px) scale(1.25); }
+.nebula1{ transform: translateZ(-7px) scale(1.75); }
+.nebula2{ transform: translateZ(-1.25px) scale(1.125); }
+
+.star1, .constellations, .star2, .star3, .nebula1, .nebula2{
+    pointer-events: none;
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+@keyframes fade{
+    0%, 100%{ opacity: 0; }
+    50%{ opacity: .05; }
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+
+.title{ 
+    transform: scale(0);
+    animation: load .5s var(--back-out-curve) forwards; 
+}
+
+.title-parent{
+    animation: title-bounce 20s var(--exponential-curve) both;
+    animation-iteration-count: infinite;
+}
+
+.header-info{ display: grid; }
+
+#words{
+    transform: scale(0);
+    font-size: 2rem;
+    animation: load .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;    
+    animation-delay: .75s;
+}
+
+#scrollindicator{
+    animation: flash 5s var(--exponential-curve) both;
+    animation-iteration-count: infinite;
+    /* opacity: 0; */
+    max-width: 50px;
+    margin: auto;
+    padding-top: 150px;
+}
+
+@keyframes title-bounce{
+    0%, 100%{ transform: scale(1); }
+    50%{ transform: scale(1.1); }
+}
+
+@keyframes flash{
+    0%, 100%{ opacity: 0; }
+    50%{ opacity: 1; }
+}
+
+/* Phones */
+@media only screen and (max-width: 600px){
+    @keyframes title-bounce{
+        0%, 100%{ transform: scale(.75); }
+        50%{ transform: scale(.85); }
+    }
+}
+
+/* Smaller Phones */
+@media only screen and (max-width: 400px){
+    @keyframes title-bounce{
+        0%, 100%{ transform: scale(.5); }
+        50%{ transform: scale(.65); }
+    }
+}

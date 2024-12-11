@@ -1,4 +1,19 @@
-* {
+:root{
+    --back-in-curve: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    --back-out-curve: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --back-inout-curve: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --exponential-curve: cubic-bezier(0.19, 1, 0.22, 1);
+    --default-color: white;
+    --default-bg-color: #3d3d3d;
+    --default-nav-color: #0d0c19;
+    --default-nav-secondary-color: #1a1735;
+    
+    font-family: Arial;
+    background-color: var(--default-bg-color);
+    color: var(--default-color);
+
+
+    /* SELECTION PREVENTION */
     user-select: none;
 
     -webkit-user-select: none;
@@ -7,83 +22,97 @@
     -ms-user-select: none;
     
     -moz-user-select: none;
-    color: white;
-    font-family: Arial;
-    text-decoration: none;
 }
 
+* { text-decoration: none; }
+body{ margin: 0; }
 img{ pointer-events: none; }
 
-body{ margin: 0; }
+.navbar{
+    position: fixed;
+    background-color: var(--default-nav-color);
+    
+    z-index: 1;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transition: width 0.2s var(--back-out-curve);
+}
+.navitem{ 
+    height: auto;
+    width: 100%; 
+    filter: opacity(1);
+    transition: all 0.25s var(--back-out-curve);
+}
+.navlink{
+    color: var(--default-color);
+    display: flex;
+    align-items: center;
+    height:5rem;
+}
+
+.navtext{
+    display: none;
+    margin-left: 1rem;
+    font-weight: bold;
+    transition: all 0.25s var(--back-out-curve);
+}
+
+.navitem img{
+    max-width: 50px;
+    margin: 0 0.75rem;
+}
+
+.navitem:hover{
+    filter: opacity(0.7);
+    background-color: var(--default-nav-secondary-color);
+}
+
+.navlogo{
+    margin-bottom: 1rem;
+    text-align: center;
+    justify-items: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.15ch;
+    background-color: #100e21;
+    width: 100%;
+    filter: opacity(1);
+}
+
+.navlogo:hover{
+    filter: opacity(0.7);
+    background-color: rgb(12, 10, 23);
+}
+
+
+
+body::-webkit-scrollbar{ width: 0.5rem; }
+body::-webkit-scrollbar-track{ background: #0e0c10; }
+body::-webkit-scrollbar-thumb{ background: #683d8e; }
 
 section{
     font-size: 2rem;
     padding: 2rem;
-    background-color: #3d3d3d;
-    color: white;
-}
-
-header{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    transform-style: preserve-3d;
-    z-index: -1;
-}
-
-.wrapper{
+    background-color: var(--default-bg-color);
+    color: var(--default-color);
     height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    perspective: 10px;
 }
 
-.star1{ transform: translateZ(-10px) scale(2); }
-.constellations{ 
-    transform: translateZ(-10px) scale(2); 
-    animation: fade 5s ease-in-out both;
-    animation-iteration-count: infinite;
-    opacity: 0;
-}
-.star2{ transform: translateZ(-5px) scale(1.5); }
-.star3{ transform: translateZ(-2.5px) scale(1.25); }
-.nebula1{ transform: translateZ(-7px) scale(1.75); }
-.nebula2{ transform: translateZ(-1.25px) scale(1.125); }
-
-.star1, .constellations, .star2, .star3, .nebula1, .nebula2{
-    pointer-events: none;
-    position: absolute;
-    min-height: 100vh;
-    width: 100vw;
-    object-fit: cover;
+.button{ transition: all 0.25s var(--back-out-curve); }
+.button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
-.header-info{ display: grid; }
 
-.title{ 
-    transform: scale(0);
-    animation: load .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
-}
-
-.title-parent{
-    animation: title-bounce 20s cubic-bezier(0.165, 0.84, 0.44, 1) both;
-    animation-iteration-count: infinite;
-}
-
-#words{
-    transform: scale(0);
-    font-size: 2rem;
-    animation: load .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;    
-    animation-delay: .75s;
-}
-
+/* SOCIALS */
 #socials{
     transform: scale(0);
-    animation: load .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;    
+    animation: load .5s var(--back-out-curve) forwards;    
     animation-delay: 1s;
 }
 
@@ -97,27 +126,84 @@ header{
     
 }
 
-#socials img:hover{ animation: glow 1s cubic-bezier(0.19, 1, 0.22, 1) infinite alternate; }
+#socials img:hover{ animation: glow 1s var(--exponential-curve) infinite alternate; }
+/* --- */
 
-.button{ transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-.button:hover{    
-    opacity: 0.5;
-    cursor: pointer;
-    transform: scale(1.1);
-}
 
-@keyframes fade{
-    0%, 100%{ opacity: 0; }
-    50%{ opacity: .05; }
-}
 @keyframes load{
     0%{ transform: scale(0);}
     100%{ transform: scale(1);}
 }
-@keyframes title-bounce{
-    0%, 100%{ transform: scale(1); }
-    50%{ transform: scale(1.1); }
+@keyframes glow{ to { box-shadow: 0px 0px 15px 5px var(--default-color); }}
+
+/* Smaller Phones */
+@media only screen and (max-width: 400px){
+    .navitem img{
+        max-width: 35px;
+        margin: 0 0.5rem;
+    }
+    .navlogo .navtext{
+        font-size: 1rem;
+    }
+    @keyframes load{
+        0%{ transform: scale(0);}
+        100%{ transform: scale(.8);}
+    }
 }
-@keyframes glow{
-    to { box-shadow: 0px 0px 15px 5px #feffff; }
+
+/* Phones */
+@media only screen and (max-width: 600px){
+    .navbar{
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+        flex-direction: row;
+    }
+
+    .navfold{ display: none; }
+
+    .navlink{ height: 4rem; }
+    .navitem, .navlogo{ justify-items: center; }
+
+    .navlogo{ margin-bottom: 0rem; }
+    .navlogo .navtext{ 
+        display: block; 
+        margin-left: 0rem;
+        scale: 0.75;
+    }
+    section{ margin-left: 0rem; }
+
+    @keyframes load{
+        0%{ transform: scale(0);}
+        100%{ transform: scale(.9);}
+    }
+}
+
+/* Larger */
+@media only screen and (min-width: 600px){
+    .navbar{
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    .navbar:hover{ width: 13rem; }
+    
+    .navbar:hover .navtext{
+        display: block;    
+        filter: opacity(1);
+    }
+    
+    .navbar:hover .navfold{
+        transform: rotate(180deg);
+        margin-right: 50px;
+    }
+
+    .navfold{
+        transform: rotate(0deg);
+        transition: transform .5s var(--back-out-curve);
+    }    
+
+    section{ margin-left: 4rem; }
 }
