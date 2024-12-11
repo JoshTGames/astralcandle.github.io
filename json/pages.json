@@ -1,27 +1,27 @@
 [
     {
         "name": "GAMES",
-        "icon": "youtube.PNG?",
+        "icon": "games.png?",
         "url": "games"
     },
     {
         "name": "BLOG",
-        "icon": "youtube.PNG?",
+        "icon": "blog.png?",
         "url": "blog"
     },
     {
         "name": "OUR STORY",
-        "icon": "youtube.PNG?",
-        "url": "about"
+        "icon": "story.png?",
+        "url": "story"
     },
     {
         "name": "PRESS KIT",
-        "icon": "youtube.PNG?",
+        "icon": "presskit.png?",
         "url": "presskit"
     },
     {
         "name": "CONTACT",
-        "icon": "youtube.PNG?",
+        "icon": "contact.png?",
         "url": "contact"
     }
 ]

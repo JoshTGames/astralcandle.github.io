@@ -43,5 +43,22 @@ function generateMain(data){
         `;
     }
 
+    // socials
+    let socials = `<span id="socials">`;
+    for(let i = 0; i < data[0].socials.length; i++){
+        socials += `
+            <a href="https://www.${data[0].socials[i].url}" target="_blank" rel="noopener noreferrer">
+                <img src="/content\\siteimages\\socials\\${data[0].socials[i].icon}" alt="${data[0].socials[i].name}" class="button">
+            </a>
+        `;
+    }
+    socials += `</span>`
+    element = document.querySelector(".wrapper");
+    element.innerHTML += `
+        <div class="footer">
+            ${socials}
+            <span class="footermsg">©${settings.sitedob}-${new Date().getFullYear()}. Astral Candle. All Rights Reserved</span>
+        </div>
+    `;
     // --- footer
 }

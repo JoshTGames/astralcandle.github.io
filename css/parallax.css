@@ -36,6 +36,7 @@
 }
 
 header{
+    margin-left: 4rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -69,7 +70,7 @@ header{
 #scrollindicator{
     animation: flash 5s var(--exponential-curve) both;
     animation-iteration-count: infinite;
-    /* opacity: 0; */
+    opacity: 0;
     max-width: 50px;
     margin: auto;
     padding-top: 150px;
@@ -91,6 +92,7 @@ header{
         0%, 100%{ transform: scale(.75); }
         50%{ transform: scale(.85); }
     }
+    header{ margin-left: 0rem; }
 }
 
 /* Smaller Phones */
