@@ -1,14 +1,23 @@
-functions.push(generateSpotlight);
+functions.unshift(generateSpotlight);
 
 function generateSpotlight(data){
+    
     let spotlight = data[3];
+
+    let bg = ``;
+    if(spotlight.bgvideo != ""){
+        bg = `<video autoplay muted loop"><source src="/content\\spotlight\\${spotlight.bgvideo}" type="video/mp4"></video>`;
+    }
+    else if(spotlight.bgimage != ""){
+        bg = `<img src="/content\\spotlight\\${spotlight.bgimage}">`
+    }
+
+
     // Generate Tab Info
     element = document.querySelector(".spotlight");    
     element.innerHTML += `
         <div class="spotlight-box">
-            <div class="spotlight-background">
-                <img src="/content\\spotlight\\${spotlight.bgimage}">
-            </div>
+            <div class="spotlight-background">${bg}</div>
             <span class="spotlight-visual">                
                 <div class="spotlight-icon">
                     <img src="/content\\spotlight\\${spotlight.icon}">

@@ -2,11 +2,13 @@
 let jsonURLs = ['/json/settings.json', '/json/pages.json', '/json/games.json', '/json/spotlight.json'];
 
 let functions = [generateMain];
-Promise.all(jsonURLs.map(url => fetch(url).then(response => response.json())))
-.then(jsons => functions.forEach(f => {
-   f(jsons); 
-}))
-.catch(error => console.error('Error:', error));
+function runFunctions(){
+    Promise.all(jsonURLs.map(url => fetch(url).then(response => response.json())))
+    .then(jsons => functions.forEach(f => {
+        f(jsons); 
+    }))
+    .catch(error => console.error('Error:', error));
+}
 // --
 
 function generateSocials(socialData){
