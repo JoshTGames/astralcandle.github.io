@@ -6,7 +6,7 @@ function generateSpotlight(data){
 
     let bg = ``;
     if(spotlight.bgvideo != ""){
-        bg = `<video autoplay muted loop"><source src="/content\\spotlight\\${spotlight.bgvideo}" type="video/mp4"></video>`;
+        bg = `<video autoplay muted loop><source src="/content\\spotlight\\${spotlight.bgvideo}" type="video/mp4"></video>`;
     }
     else if(spotlight.bgimage != ""){
         bg = `<img src="/content\\spotlight\\${spotlight.bgimage}">`
