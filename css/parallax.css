@@ -1,8 +1,7 @@
 .wrapper{    
     height: 100vh;
-    overflow-y: auto;
+    overflow-y:auto;
     overflow-x: hidden;
-
     perspective: 10px;
 }
 
@@ -44,7 +43,7 @@ header{
     text-align: center;
     height: 100%;
     transform-style: preserve-3d;
-    z-index: -1;
+    z-index: 0;
 }
 
 
