@@ -4,6 +4,6 @@
     "icon": "icon.png?",
     "bgvideo": "background.mp4?",
     "bgimage": "",
-    "buttonlabel": "Find out more!",
-    "buttonurl": "/"
+    "buttonlabel": "Buy now!",
+    "buttonurl": "https://store.steampowered.com/app/1387610/Cowboys_n_Stuff/"
 }
