@@ -17,6 +17,7 @@ function generateSpotlight(data){
                 <div class="spotlight-info">
                     <h1 class="spotlight-title">${spotlight.name}</h1>
                     <h2 class="spotlight-description">${spotlight.description}</h2>
+                    <a href="${spotlight.buttonurl}" class="spotlight-button">${spotlight.buttonlabel}</a>
                 </div>
             </span>
         </div>

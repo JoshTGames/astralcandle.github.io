@@ -23,14 +23,12 @@
 }
 
 .spotlight-icon{
-    width: 750px;
-    height: max-content;
+    /* height: max-content; */
 
     border-radius: 4rem;
     overflow: hidden;
 
     display: flex;
-    justify-content: center;
 }
 
 .spotlight-icon img{
@@ -42,14 +40,13 @@
 .spotlight-visual{
     display: flex;
     position: relative;
-    margin: 0;
     padding: 25px 75px 25px 75px;
-    height: 100%;
+    align-items: center;
 }
 
 .spotlight-info{
     justify-content: center;
-    margin-left: 50px;
+    margin-left: 5vw;
 }
 
 /* INFO */
@@ -65,11 +62,14 @@
 .spotlight-description{
     font-size: 30px;
     font-weight: normal;
-    margin: 0;
+    margin: 0 0 50px;
 }
 
 .spotlight-button{
-
+    background-color: aliceblue;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-weight: bolder;
 }
 
 
@@ -82,15 +82,14 @@
 @media only screen and (max-width: 600px){
     .spotlight-visual{
         flex-direction: column;
-        align-items: center;
-        padding: 25px 0 25px;
-    }
 
+        padding: 25px 0 50px;
+        width: 100vw;
+    }
     .spotlight-info{
-        margin: 0 15px 0 15px;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
+        margin: 0;
+        text-align: center;
+        margin: 15px;
     }
 
     .spotlight-icon{ width: 250px; }
@@ -99,10 +98,9 @@
         height: 100vh;    
         width: auto;
     }
-
-    .spotlight-description{
-        padding-top: 10px;
-        font-size: 20px;
-        font-weight: normal;
+    
+    .spotlight-title{
+        margin: 0 0 20px;
     }
+    .spotlight-description{ display: none; }
 }

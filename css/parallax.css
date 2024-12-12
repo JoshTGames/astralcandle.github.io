@@ -43,7 +43,7 @@ header{
     text-align: center;
     height: 100%;
     transform-style: preserve-3d;
-    z-index: 0;
+    z-index: -1;
 }
 
 
