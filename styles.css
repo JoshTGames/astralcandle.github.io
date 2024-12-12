@@ -100,13 +100,14 @@ body::-webkit-scrollbar-track{ background: #0e0c10; }
 body::-webkit-scrollbar-thumb{ background: #683d8e; }
 
 section{
+    display: flex;
     font-size: 2rem;
-    padding: 2rem;
     background: var(--bg-gradient); 
     background-attachment: fixed; 
     background-size: cover;
     color: var(--default-color);
-    height: 50vh;
+
+    justify-content: center;
 }
 
 .button{ transition: all 0.25s var(--back-out-curve); }
@@ -139,16 +140,12 @@ section{
 /* FOOTER */
 .footer{
     display: grid;
+    position: relative;
     background-color: var(--default-nav-secondary-color);
-    justify-content: center;
     justify-items: center;
-    align-items: center;
 }
 
-.footermsg{ 
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+.footermsg{ margin: 20px 0; }
 
 
 
