@@ -50,12 +50,12 @@ function generateMain(data){
     `;
     let pages = data[1];
     for(let i = 0; i < pages.length; i++){
-        if(pages[i].name.toLowerCase() == "games" && data[2].length <= 1){ continue; }
+        if(!pages[i].display || pages[i].name.toLowerCase() == "games" && data[2].length <= 1){ continue; }
         element.innerHTML += `
             <li class="navitem">
                 <a href="/pages\\${pages[i].url}.html" class="navlink">
                     <img src="/content\\siteimages\\pageicons\\${pages[i].icon}">
-                    <span class="navtext">${pages[i].name}</span>
+                    <span class="navtext">${pages[i].name.toUpperCase()}</span>
                 </a>
             </li>
         `;

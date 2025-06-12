@@ -1,27 +1,37 @@
 [
     {
-        "name": "GAMES",
+        "name": "Games",
+        "description": "Games",
         "icon": "games.png?",
-        "url": "games"
+        "url": "games",
+        "display": true
     },
     {
-        "name": "BLOG",
+        "name": "Blog",
+        "description": "Games",
         "icon": "blog.png?",
-        "url": "blog"
+        "url": "blog",
+        "display": false
     },
     {
-        "name": "OUR STORY",
+        "name": "Our Story",
+        "description": "Once Upon a Time...",
         "icon": "story.png?",
-        "url": "story"
+        "url": "story",
+        "display": true
     },
     {
-        "name": "PRESS KIT",
+        "name": "Press Kit",
+        "description": "A little about ourselves",
         "icon": "presskit.png?",
-        "url": "presskit"
+        "url": "presskit",
+        "display": true
     },
     {
-        "name": "CONTACT",
+        "name": "Contact",
+        "description": "Games",
         "icon": "contact.png?",
-        "url": "contact"
+        "url": "contact",
+        "display": false
     }
 ]
